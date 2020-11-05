@@ -1,60 +1,35 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <HelloWorld/>
+  <v-app class="background">
+    <v-main class="content">
+      <v-container class="fill-height">
+        <v-row justify="center" align="center">
+          <Card />
+        </v-row>
+      </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import Card from "./components/Card";
 
 export default {
-  name: 'App',
+  name: "App",
 
   components: {
-    HelloWorld,
+    Card,
   },
 
-  data: () => ({
-    //
-  }),
+  data() {
+    return {};
+  },
 };
 </script>
+
+<style lang="sass" scoped>
+.background
+  z-index: 1
+  background: url('https://www.metalzone.fr/wp-content/uploads/2020/06/currents-the-way-it-ends-e1591523040955.jpg') no-repeat center center / cover !important
+.content
+  backdrop-filter: blur(10px)
+</style>
